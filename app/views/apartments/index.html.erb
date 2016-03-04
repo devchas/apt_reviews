@@ -1,0 +1,14 @@
+<table>
+<% @apartments.each do |apartment| %>
+<tr>
+	<td><%= apartment.name %></td>
+	<td><%= apartment.email %></td>
+	<td>
+		<p><%= apartment.street %> <%= apartment.apt_num %></p>
+		<p><%= apartment.city %>, <%= apartment.state %> <%= apartment.zip_code %></p>
+	</td>
+	<td><%= apartment.rent_or_buy %></td>
+</tr>
+<% end %>
+</table>
+<%= link_to 'Home', root_url %>
