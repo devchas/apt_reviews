@@ -5,8 +5,19 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <link href='https://fonts.googleapis.com/css?family=Fredoka+One' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Gloria+Hallelujah' rel='stylesheet' type='text/css'>
 </head>
 <body>
+	<a href="/"><div id="header" class="container">
+		<%= image_tag("Ok.jpg", id: "logo") %>
+		<div id="tagline">	
+			<h1>Apartment Insights</h1>
+			<p>The ultimate resource in apartment info</p>
+		</div>
+</div></a>
+<%= image_tag("apartment.jpg", id: "background") %>
 
 <%= yield %>
 

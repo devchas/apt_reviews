@@ -16,7 +16,7 @@ class ApartmentsController < ApplicationController
 
 		respond_to do |format|
 			if @apartment.save
-				format.html { redirect_to root_url, notice: 'Thanks for your entry.'}
+				format.html { redirect_to root_url }
 			else
 				format.html { redirect_to root_url, notice: 'Did not work.' }
 			end

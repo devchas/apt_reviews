@@ -1,0 +1,111 @@
+#block1 {
+	padding-bottom: 20px;
+
+	#block1_content {
+		margin-top: 150px;
+	}
+
+	.content {
+		display: inline;
+	}
+
+	#content1 {
+		padding: 15px;
+		margin-left: 100px;
+		float: left;
+		width: 400px;
+	}
+
+	#form_div {
+		max-width: 410px;
+		margin-left: 70px;
+		float: left;
+		background-color: rgba(220, 220, 220, 0.95);
+		padding: 15px;
+		border-radius: 8px;
+
+		#form_head {
+			border-bottom: 1px solid #999999;
+			padding-bottom: 10px;
+		}
+		
+		.field {
+			margin-bottom: 5px;
+
+			input, #apartment_state {
+				border-radius: 5px;
+				border: 1px solid #e6e6e6;
+				height: 25px;
+				font-size: 14px;
+			}
+
+			#apartment_apt_num, #apartment_state {
+				width: 60px;
+			}
+
+			#apartment_zip_code {
+				width: 60px;
+				margin-left: 5px;
+			}
+
+			label {
+				display: inline-block;
+				width: 75px;
+				font-size: 15px;
+				margin-left: 2px;
+				font-weight: bold;
+			}
+
+			input {
+				width: 170px;
+				padding-left: 5px;
+			}
+
+			#apartment_rent_or_buy_rent, #apartment_rent_or_buy_buy {
+				width: 15px;
+
+				input {
+					margin-top: 50px;
+				}
+			}
+
+		}
+
+		#rent_buy {
+			margin-top: 10px;
+
+			input {
+				height: 14px;
+			}
+		}
+
+		#rent_buy_label {
+			label {
+				width: 60px;
+				height: 25px;
+			}
+		}
+
+		.actions {
+			margin-top: 10px;
+			margin-left: 85px;
+		}
+
+		input[type=submit] {
+			height: 30px;
+			background-color: #84e1e1;
+			border: 0px;
+			font-size: 12px;
+			width: 100px;
+			border-radius: 3px;
+			font-weight: bold;
+			box-shadow: 3px 3px 5px #888888;
+			margin-bottom: 10px;
+		}
+	}
+}
+
+#block2 {
+	margin-top: 20px;
+	background-color: white;
+}
