@@ -25,11 +25,12 @@
  	#background {
 		position: fixed;
 		z-index: -1;
+		max-width: 100%;
 	}
 
 	#logo {
 		margin-top: 10px;
-		margin-left: 80px;
+		margin-left: 8%;
 		max-height: 52px;
 		float: left;
 	}
