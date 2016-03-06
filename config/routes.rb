@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   post 'apartments', to: 'apartments#create'
-  get 'apartments', to: 'apartments#index'
+  #get 'apartments', to: 'apartments#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
