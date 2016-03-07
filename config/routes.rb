@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   post 'apartments', to: 'apartments#create'
+  get 'confirm', to: 'apartments#confirm'
   #get 'apartments', to: 'apartments#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
