@@ -2,7 +2,7 @@
 	padding-bottom: 20px;
 
 	#block1_content {
-		margin-top: 170px;
+		margin-top: 120px;
 	}
 
 	.content {
@@ -20,12 +20,13 @@
 	}
 
 	#content1 {
-		margin-left: 5%;
+		padding: 15px 35px 15px 35px;
+		margin-top: 5%;
+		margin-left: 8%;
 		float: left;
-		width: 36%;
+		width: 28%;
 		background-color: rgba(255, 255, 255, 0.9);
-		margin-right: 7%;
-		min-width: 435px;
+		margin-right: 8%;
 
 		p {
 			margin-left: 23%;
@@ -34,13 +35,13 @@
 	}
 
 	#content1, #form_div {
-		padding: 15px 25px 0px 25px;
-		min-height: 315.438px;		
 		border: 1px solid black;
 		box-shadow: 3px 3px 5px #888888;
 	}
 
 	#form_div {
+		min-height: 315.438px;		
+		padding: 15px 25px 0px 25px;
 		width: 36%;
 		float: left;
 		background-color: rgba(220, 220, 220, 0.95);
@@ -60,7 +61,7 @@
 		}
 		
 		.field {
-			margin-bottom: 5px;
+			margin-bottom: 6px;
 
 			input, #apartment_state {
 				border-radius: 5px;
@@ -118,20 +119,20 @@
 		}
 
 		.actions {
-			margin-top: 10px;
 			margin-left: 85px;
 		}
 
 		input[type=submit] {
 			height: 30px;
-			background-color: #84e1e1;
+			background-color: #00a3cc;
+			color: white;
 			border: 0px;
 			font-size: 12px;
 			width: 100px;
 			border-radius: 3px;
 			font-weight: bold;
 			box-shadow: 3px 3px 5px #888888;
-			margin-top: 10px;
+			margin-top: 5px;
 		}
 	}
 }
@@ -162,6 +163,10 @@
 
 	table {
 		margin-top: -25px;
+
+		li {
+			margin-top: 4px;
+		}
 	}
 
 	#waiting {
