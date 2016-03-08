@@ -16,7 +16,7 @@ class ApartmentsController < ApplicationController
 
 		respond_to do |format|
 			if @apartment.save
-				ApartmentMailer.new_user_email(@apartment)
+				ApartmentMailer.new_user_email(@apartment).deliver
 					format.html { redirect_to confirm_url }
 				# format.json { }
 			else

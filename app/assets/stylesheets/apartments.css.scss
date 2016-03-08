@@ -20,14 +20,12 @@
 	}
 
 	#content1 {
-		padding: 15px;
 		margin-left: 5%;
 		float: left;
 		width: 36%;
 		background-color: rgba(255, 255, 255, 0.9);
 		margin-right: 7%;
 		min-width: 435px;
-		border: 1px solid black;
 
 		p {
 			margin-left: 23%;
@@ -36,14 +34,16 @@
 	}
 
 	#content1, #form_div {
-		height: 320.438px;		
+		padding: 15px 25px 0px 25px;
+		min-height: 315.438px;		
+		border: 1px solid black;
+		box-shadow: 3px 3px 5px #888888;
 	}
 
 	#form_div {
 		width: 36%;
 		float: left;
 		background-color: rgba(220, 220, 220, 0.95);
-		padding: 15px;
 		min-width: 435px;
 
 		#form_head {
@@ -83,6 +83,7 @@
 				width: 75px;
 				font-size: 15px;
 				margin-left: 2px;
+				margin-right: 5px;
 				font-weight: bold;
 			}
 
@@ -130,7 +131,7 @@
 			border-radius: 3px;
 			font-weight: bold;
 			box-shadow: 3px 3px 5px #888888;
-			margin-bottom: 10px;
+			margin-top: 10px;
 		}
 	}
 }

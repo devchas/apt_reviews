@@ -6,7 +6,7 @@ end
 class ApartmentMailer < ApplicationMailer
 
 	def new_user_email(apartment)
-		@apartment = ApartmentMailer
+		@apartment = apartment
 		mail(to: ENV["GMUN"], subject: 'New Know Thy Signup')
 	end
 end
