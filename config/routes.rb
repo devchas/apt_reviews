@@ -1,13 +1,12 @@
 Rails.application.routes.draw do
-  post 'apartments', to: 'apartments#create'
-  get 'confirm', to: 'apartments#confirm'
-  #get 'apartments', to: 'apartments#index'
+  post 'signups', to: 'signups#create'
+  get 'confirm', to: 'signups#confirm'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'apartments#new'
+  root 'signups#new'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

@@ -66,18 +66,18 @@
 		.field {
 			margin-bottom: 6px;
 
-			input, #apartment_state {
+			input, #signup_state {
 				border-radius: 5px;
 				border: 1px solid #e6e6e6;
 				height: 25px;
 				font-size: 14px;
 			}
 
-			#apartment_apt_num, #apartment_state {
+			#signup_apt_num, #signup_state {
 				width: 60px;
 			}
 
-			#apartment_zip_code {
+			#signup_zip_code {
 				width: 60px;
 				margin-left: 5px;
 			}
@@ -96,7 +96,7 @@
 				padding-left: 5px;
 			}
 
-			#apartment_rent_or_buy_rent, #apartment_rent_or_buy_buy {
+			#signup_rent_or_buy_rent, #signup_rent_or_buy_buy {
 				width: 15px;
 
 				input {

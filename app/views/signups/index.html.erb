@@ -1,0 +1,14 @@
+<table>
+<% @signups.each do |signup| %>
+<tr>
+	<td><%= signup.name %></td>
+	<td><%= signup.email %></td>
+	<td>
+		<p><%= signup.street %> <%= signup.apt_num %></p>
+		<p><%= signup.city %>, <%= signup.state %> <%= signup.zip_code %></p>
+	</td>
+	<td><%= signup.rent_or_buy %></td>
+</tr>
+<% end %>
+</table>
+<%= link_to 'Home', root_url %>
