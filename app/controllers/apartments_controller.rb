@@ -13,7 +13,7 @@ class ApartmentsController < ApplicationController
 	# POST /apartments
 	def create
 		@apartment = Apartment.new(apartment_params)
-
+	
 		respond_to do |format|
 			if @apartment.save
 				ApartmentMailer.new_user_email(@apartment).deliver
