@@ -35,6 +35,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
+  gem 'rspec-rails'
+  gem 'faker'
+  gem 'factory_girl_rails'
 end
 
 group :development do
@@ -45,6 +48,10 @@ group :development do
   gem 'spring'
 
   gem 'rails_12factor', group: :production
+
+  gem 'guard'
+  gem 'guard-rspec'
+  gem "guard-livereload"
 
   ruby "2.3.0"
 end
