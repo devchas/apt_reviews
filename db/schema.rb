@@ -11,10 +11,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160309194750) do
+ActiveRecord::Schema.define(version: 20160311173115) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "apartments", force: :cascade do |t|
+    t.string "street_address"
+    t.string "street"
+    t.string "city"
+    t.string "state"
+    t.string "zip"
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.string  "description"
+    t.integer "apartment_id",  null: false
+    t.string  "title"
+    t.integer "overal_rating"
+  end
+
+  add_index "reviews", ["apartment_id"], name: "index_reviews_on_apartment_id", using: :btree
 
   create_table "signups", force: :cascade do |t|
     t.string "name"
@@ -27,4 +44,5 @@ ActiveRecord::Schema.define(version: 20160309194750) do
     t.string "rent_or_buy"
   end
 
+  add_foreign_key "reviews", "apartments"
 end

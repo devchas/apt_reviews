@@ -1,0 +1,11 @@
+<div id=apt_index>
+	<br><br><br><br><br>
+	<h1>Apartment Listing</h1>
+	<% @apartments.each do |apartment| %>
+		<div class="listing">
+			<p><%= apartment.street_address %> <%= apartment.street %></p>
+			<p><%= apartment.city %> <%= apartment.state %>, <%= apartment.zip %></p>
+			<%= link_to("Show", :action => :show, :id => apartment.id) %>
+		</div>
+	<% end %>
+</div>

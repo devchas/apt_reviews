@@ -1,0 +1,15 @@
+<div id=apt_index>
+	<br><br><br><br><br>
+	<h1>Apartment Reviews</h1>
+		<div class="listing">
+			<p><%= @apartment.street_address %> <%= @apartment.street %></p>
+			<p><%= @apartment.city %> <%= @apartment.state %>, <%= @apartment.zip %></p>
+			<% if @reviews.count > 0 %>
+				<div class="reviews">
+					<% @reviews.each do |rvw| %>
+						<%= render partial: "review", locals: {review: rvw} %>
+					<% end %>
+				</div>
+			<% end %>
+		</div>
+</div>

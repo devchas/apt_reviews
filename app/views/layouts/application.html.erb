@@ -18,23 +18,25 @@
   </script>
 </head>
 <body>
-	<a href="/"><div id="header" class="container">
+  <div id="header" class="container">
+  <%= link_to root_url do %>
 		<%= image_tag("blueCrown.png", id: "logo") %>
 		<div id="tagline">	
 			<h1>Know Thy Apartment</h1>
 			<p>The Most Detailed Apartment Reviews from Actual Tenants</p>
 		</div>
-  </a>
+  <% end %>
   <div class="head_nav" id="browse">
-    <h2>Browse</h2>
-    <p>Apartment Reviews</p>
+    <%= link_to apartments_url do %>
+        <h2>Browse</h2>
+        <p>Apartment Reviews</p>
+    <% end %>
   </div>
-    <div class="head_nav" id="review">
+  <div class="head_nav" id="review">
     <h2>Review</h2>
     <p>Your Apartment</p>
   </div>
 </div>
-<%= image_tag("apartment.jpg", id: "background") %>
 
 <%= yield %>
 

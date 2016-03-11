@@ -1,0 +1,25 @@
+#apt_index {
+	display: block;
+	clear: left;
+	margin-left: 10%;
+	width: 80%;
+
+	.listing {
+		padding: 10px;
+		margin-bottom: 10px;
+		border: 1px solid black;
+
+		.reviews {
+			margin: 10px;
+			padding: 10px;
+			border: 1px solid black;
+
+			.review {
+				border-bottom: 1px solid #999999;
+				padding: 0px 10px 0px 10px;
+			}
+		}
+	}
+
+
+}

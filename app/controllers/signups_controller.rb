@@ -1,4 +1,4 @@
-class SignupsController < ApplicationController
+	class SignupsController < ApplicationController
 	
 	# GET /products
 	def index
