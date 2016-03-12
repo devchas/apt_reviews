@@ -1,6 +1,33 @@
 <div class="review">
 <h3><%= review.title %></h3>
+	<p>Overall Rating: <%= review.overal_rating	%></p>
 	<p><%= review.description %></p>
-	<p>Rating: <%= review.overal_rating	%></p>
+	
+	<h3>Bathroom</h3>
+	<p>Shower Pressure: <%= good_or_bad review.shower_pressure %></p>
+	<p>Does hot water last in the shower? <%= yes_or_no review.hot_water_lasts %></p>
+	<p>Does it take a while for the shower to heat up? <%= yes_or_no review.long_to_heat_water %></p>
+	<p>Does the toilet clog often? <%= yes_or_no review.toilet_clogs %></p>
+
+	<h3>Neighborhood</h3>
+	<p>Is your apartment in a safe area? <%= yes_or_no review.safe %></p>
+	<p>Does noise from outside bother you? <%= yes_or_no review.noise_outside %></p>
+	<p>How is access to transportation? <%= good_or_bad review.transportation_access %></p>
+	<p>How are the local food delivery options? <%= good_or_bad review.delivery %></p>
+	<p>How are the local dining out options? <%= good_or_bad review.dining %></p>
+	<p>Is the area fun? <%= yes_or_no review.fun_area %></p>
+
+	<h3>Building and Management</h3>
+	<p>Are the walls too thin? Hearing those neighbors? <%= yes_or_no review.noise_neighbors %></p>
+	<p>Does your super take care of things promptly? <%= yes_or_no review.mgmt_reliability %></p>
+	<p>Are your appliances reliable? <%= yes_or_no review.appliances %></p>
+	<p>Does your building have pest problems? <%= yes_or_no review.pests %></p>
+	<p>Is your building kept tidy? <%= yes_or_no review.bldg_clean %></p>
+	<p>How is it working with your management company? <%= yes_or_no review.mgmt_accomodate %></p>
+	<p>How is the closet space? <%= good_or_bad review.closet_space %></p>
+	<p>Is your heating good? <%= yes_or_no review.heating %></p>
+	<p>Is cooling good? <%= yes_or_no review.cooling %></p>
+
+	<br>
 	<p>Posted by: <%= review.user.name %>
 </div>
