@@ -8,6 +8,5 @@ class ApartmentsController < ApplicationController
 	# GET/apartments/1
 	def show
 		@apartment = Apartment.find(params[:id])
-		@reviews = @apartment.reviews.all
 	end
 end

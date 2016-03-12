@@ -2,12 +2,14 @@
 	<br><br><br><br><br>
 	<h1>Apartment Reviews</h1>
 		<div class="listing">
+			<h3>Address</h3>
 			<p><%= @apartment.street_address %> <%= @apartment.street %></p>
 			<p><%= @apartment.city %> <%= @apartment.state %>, <%= @apartment.zip %></p>
-			<% if @reviews.count > 0 %>
+			<%= link_to("Back to Apartments", apartments_path) %>
+			<% if @apartment.reviews.count > 0 %>
 				<div class="reviews">
-					<% @reviews.each do |rvw| %>
-						<%= render partial: "review", locals: {review: rvw} %>
+					<% @apartment.reviews.each do |review| %>
+						<%= render partial: "review", locals: {review: review} %>
 					<% end %>
 				</div>
 			<% end %>

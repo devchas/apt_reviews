@@ -1,4 +1,4 @@
-	class SignupsController < ApplicationController
+class SignupsController < ApplicationController
 	
 	# GET /products
 	def index
@@ -17,7 +17,7 @@
 		respond_to do |format|
 			if @signup.save
 				SignupMailer.new_user_email(@signup).deliver
-					format.html { redirect_to confirm_url }
+				format.html { redirect_to confirm_url }
 				# format.json { }
 			else
 				format.html { render :new }
