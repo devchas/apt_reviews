@@ -9,6 +9,12 @@
 		margin-bottom: 10px;
 		border: 1px solid black;
 
+		#map_canvas {
+			width: 300px;
+			height: 250px;
+			float: right;
+		}
+
 		.reviews {
 			margin: 10px;
 			padding: 10px;

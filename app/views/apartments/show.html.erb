@@ -1,7 +1,11 @@
+<% map_key = ENV["LCLMAP"] %>
+<%= javascript_tag '', type:'text/javascript', src:'http://maps.google.com/maps/api/js?key=' << map_key %>
+
 <div id=apt_index>
 	<br><br><br><br><br>
 	<h1>Apartment Reviews</h1>
 		<div class="listing">
+			<div id="map_canvas"></div>
 			<h3>Address</h3>
 			<p><%= @apartment.street_address %> <%= @apartment.street %></p>
 			<p><%= @apartment.city %> <%= @apartment.state %>, <%= @apartment.zip %></p>
@@ -40,3 +44,14 @@
 			<% end %>
 		</div>
 </div>
+
+<%= javascript_tag do %>
+	window.full_address = "<%= @apartment.full_address %>";
+	initialize(window.full_address);
+<% end %>
+
+
+
+
+
+
