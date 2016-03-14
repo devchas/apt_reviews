@@ -7,7 +7,9 @@ module ApplicationHelper
   # returns % of responses rated true
 	def cum_rating(responses)
 		t = responses.select { |r| r == true }
-		number_to_percentage(t.length.to_f / responses.length.to_f * 100, precision: 0)
+		f = responses.select { |r| r == false }
+		total = t.length + f.length
+		number_to_percentage(t.length.to_f / total * 100, precision: 0)
 	end
 
 	# returns average rating
