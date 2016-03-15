@@ -13,28 +13,10 @@
 			<% if @apartment.reviews.count > 0 %>
 				<div id="cum_ratings">
 						<h3>Aggregate Rating: <%= avg_rating @apartment.reviews.collect { |r| r.overal_rating } %> / 5.0</h3>
-
-						<% @topics.each do |topic| %>
-							<h3><%= topic.titleize %></h3>
-							<% @questions.where(category: topic).each do |question| %>
-								<p><%= question.question %> <%= cum_rating @apartment.reviews.collect { |r| r.send(question.method) } %> said <%= question.response %></p>
-							<% end %>
-							<br>
+						<% @questions.each do |question| %>
+							<p><%= question.question %> <%= cum_rating @answers, question.id %> said yes</p>
 						<% end %>
-
-						<br>
-						<h1>OLD QUESTIONS</h1>
-
-						<h3>Building and Management</h3>
-						<p>Are the walls too thin? Hearing those neighbors? <%= cum_rating @apartment.reviews.collect { |r| r.noise_neighbors } %> said yes</p>
-						<p>Does your super take care of things promptly? <%= cum_rating @apartment.reviews.collect { |r| r.mgmt_reliability } %> said yes</p>
-						<p>Are your appliances reliable? <%= cum_rating @apartment.reviews.collect { |r| r.appliances } %> said yes</p>
-						<p>Does your building have pest problems? <%= cum_rating @apartment.reviews.collect { |r| r.pests } %> said yes</p>
-						<p>Is your building kept tidy? <%= cum_rating @apartment.reviews.collect { |r| r.bldg_clean } %> said yes</p>
-						<p>How is it working with your management company? <%= cum_rating @apartment.reviews.collect { |r| r.mgmt_accomodate } %> said yes</p>
-						<p>How is the closet space? <%= cum_rating @apartment.reviews.collect { |r| r.closet_space } %> said yes</p>
-						<p>Is your heating good? <%= cum_rating @apartment.reviews.collect { |r| r.heating } %> said yes</p>
-						<p>Is cooling good? <%= cum_rating @apartment.reviews.collect { |r| r.cooling } %> said yes</p>
+							<br>
 				</div>
 				<div class="reviews">
 					<% @apartment.reviews.each do |review| %>

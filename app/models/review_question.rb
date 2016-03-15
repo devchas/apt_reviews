@@ -1,3 +1,3 @@
 class Review_question < ActiveRecord::Base
-	belongs_to :reviews
+	has_many :answers
 end
