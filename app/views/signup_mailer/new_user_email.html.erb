@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+  	<h3>New User Signup!</h3>
+  	<ul>
+  		<li>Name: <%= @signup.name %></li>
+  		<li>Email: <%= @signup.email %></li>
+  		<li>Street: <%= @signup.street %> <%= @signup.apt_num %></li>
+  		<li>City/State/Zip: <%= @signup.city %>, <%= @signup.state %> <%= @signup.zip_code %></li>
+  		<li>Rent or Buy: <%= @signup.rent_or_buy %></li>		
+  	</ul>
+  </body>
+</html>

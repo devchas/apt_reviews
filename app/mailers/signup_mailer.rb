@@ -3,10 +3,10 @@ class ApplicationMailer < ActionMailer::Base
 	layout 'mailer'	
 end
 
-class ApartmentMailer < ApplicationMailer
+class SignupMailer < ApplicationMailer
 
-	def new_user_email(apartment)
-		@apartment = apartment
+	def new_user_email(signup)
+		@signup = signup
 		mail(to: ENV["GMUN"], subject: 'New Know Thy Signup')
 	end
 end

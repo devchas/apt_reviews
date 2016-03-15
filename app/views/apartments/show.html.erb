@@ -1,0 +1,57 @@
+<% map_key = ENV["LCLMAP"] %>
+<%= javascript_tag '', type:'text/javascript', src:'http://maps.google.com/maps/api/js?key=' << map_key %>
+
+<div id=apt_index>
+	<br><br><br><br><br>
+	<h1>Apartment Reviews</h1>
+		<div class="listing">
+			<div id="map_canvas"></div>
+			<h3>Address</h3>
+			<p><%= @apartment.street_address %> <%= @apartment.street %></p>
+			<p><%= @apartment.city %> <%= @apartment.state %>, <%= @apartment.zip %></p>
+			<%= link_to("Back to Apartments", apartments_path) %>
+			<% if @apartment.reviews.count > 0 %>
+				<div id="cum_ratings">
+						<h3>Aggregate Rating: <%= avg_rating @apartment.reviews.collect { |r| r.overal_rating } %> / 5.0</h3>
+
+						<% @topics.each do |topic| %>
+							<h3><%= topic.titleize %></h3>
+							<% @questions.where(category: topic).each do |question| %>
+								<p><%= question.question %> <%= cum_rating @apartment.reviews.collect { |r| r.send(question.method) } %> said <%= question.response %></p>
+							<% end %>
+							<br>
+						<% end %>
+
+						<br>
+						<h1>OLD QUESTIONS</h1>
+
+						<h3>Building and Management</h3>
+						<p>Are the walls too thin? Hearing those neighbors? <%= cum_rating @apartment.reviews.collect { |r| r.noise_neighbors } %> said yes</p>
+						<p>Does your super take care of things promptly? <%= cum_rating @apartment.reviews.collect { |r| r.mgmt_reliability } %> said yes</p>
+						<p>Are your appliances reliable? <%= cum_rating @apartment.reviews.collect { |r| r.appliances } %> said yes</p>
+						<p>Does your building have pest problems? <%= cum_rating @apartment.reviews.collect { |r| r.pests } %> said yes</p>
+						<p>Is your building kept tidy? <%= cum_rating @apartment.reviews.collect { |r| r.bldg_clean } %> said yes</p>
+						<p>How is it working with your management company? <%= cum_rating @apartment.reviews.collect { |r| r.mgmt_accomodate } %> said yes</p>
+						<p>How is the closet space? <%= cum_rating @apartment.reviews.collect { |r| r.closet_space } %> said yes</p>
+						<p>Is your heating good? <%= cum_rating @apartment.reviews.collect { |r| r.heating } %> said yes</p>
+						<p>Is cooling good? <%= cum_rating @apartment.reviews.collect { |r| r.cooling } %> said yes</p>
+				</div>
+				<div class="reviews">
+					<% @apartment.reviews.each do |review| %>
+						<%= render partial: "review", locals: {review: review, apartment: @apartment} %>
+					<% end %>
+				</div>
+			<% end %>
+		</div>
+</div>
+
+<%= javascript_tag do %>
+	window.full_address = "<%= @apartment.full_address %>";
+	initialize(window.full_address);
+<% end %>
+
+
+
+
+
+

@@ -1,0 +1,31 @@
+<%= form_for @review do |f| %>
+	<% if @review.errors.any? %>
+		<div id="error_explanation">
+      <p>Whoops! Looks like there are a few issues to sort out.</p>
+
+      <ul>
+      <% @review.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+     </div>
+	<% end %>
+
+	<div class="field">
+    <%= f.label "Title:" %>
+    <%= f.text_field :title, :placeholder => "Review Title" %>
+  </div>
+  <div class="field">
+    <%= f.label "Your Review:" %>
+    <%= f.text_field :description, :placeholder => "Insert Review" %>
+  </div>
+  <div class="field">
+    <%= f.label "Rating:" %>
+    <%= f.text_field :overal_rating, :placeholder => "1 - 5" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "SUBMIT" %>
+  </div>
+
+<% end %>

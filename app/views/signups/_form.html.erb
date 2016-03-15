@@ -1,10 +1,10 @@
-<%= form_for(@apartment) do |f| %>
-	<% if @apartment.errors.any? %>
+<%= form_for @signup do |f| %>
+	<% if @signup.errors.any? %>
 		<div id="error_explanation">
       <p>Whoops! Looks like there are a few issues to sort out.</p>
 
       <ul>
-      <% @apartment.errors.full_messages.each do |message| %>
+      <% @signup.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>
@@ -22,7 +22,7 @@
  	<div class="field">
     <%= f.label 'Address:' %>
     <%= f.text_field :street, :placeholder => "Street" %>
-    <span class="apt"><%= f.text_field :apt_num, :placeholder => "Apt" %></span>
+    <span id="apt"><%= f.text_field :apt_num, :placeholder => "Apt" %></span>
   </div>
   <div class="field">
     <%= f.label ' ' %>
