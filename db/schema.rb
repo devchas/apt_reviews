@@ -11,10 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160312234828) do
+ActiveRecord::Schema.define(version: 20160314221651) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "answers", force: :cascade do |t|
+    t.integer "review_id"
+    t.integer "review_question_id"
+    t.boolean "response"
+  end
 
   create_table "apartments", force: :cascade do |t|
     t.string "street_address"
@@ -28,35 +34,14 @@ ActiveRecord::Schema.define(version: 20160312234828) do
     t.string "question"
     t.string "method"
     t.string "category"
-    t.string "response"
   end
 
   create_table "reviews", force: :cascade do |t|
     t.string  "description"
-    t.integer "apartment_id",          null: false
+    t.integer "apartment_id",  null: false
     t.string  "title"
     t.integer "overal_rating"
     t.integer "user_id"
-    t.boolean "transportation_access"
-    t.boolean "safe"
-    t.boolean "fun_area"
-    t.boolean "delivery"
-    t.boolean "dining"
-    t.boolean "noise_outside"
-    t.boolean "noise_neighbors"
-    t.boolean "appliances"
-    t.boolean "mgmt_reliability"
-    t.boolean "bldg_clean"
-    t.boolean "construction"
-    t.boolean "mgmt_accomodate"
-    t.boolean "heating"
-    t.boolean "cooling"
-    t.boolean "hot_water_lasts"
-    t.boolean "long_to_heat_water"
-    t.boolean "shower_pressure"
-    t.boolean "toilet_clogs"
-    t.boolean "closet_space"
-    t.boolean "pests"
   end
 
   add_index "reviews", ["apartment_id"], name: "index_reviews_on_apartment_id", using: :btree

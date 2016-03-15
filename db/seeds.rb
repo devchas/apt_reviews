@@ -23,7 +23,18 @@ questions = [
 	"Do you hear noise from outside while in your apartment?",
 	"Do you have access to transportation?",
 	"How are the local food delivery options?",
-	"How are the local dining out options?"
+	"How are the local dining out options?",
+	"Is the area fun?",
+	"Are the walls too thin? Hearing those neighbors?",
+	"Does your super take care of things promptly?",
+	"Are your appliances reliable?",
+	"Does your building have pest problems?",
+	"Is your building kept tidy?",
+	"How is it working with your management company?",
+	"How is the closet space?",
+	"Is your heating good?",
+	"Is cooling good?",
+	"Do you have issues getting packages?"
 ]
 
 methods = [
@@ -35,7 +46,18 @@ methods = [
 	"noise_outside",
 	"transportation_access",
 	"delivery",
-	"dining"
+	"dining",
+	"fun_area",
+	"noise_neighbors",
+	"super",
+	"appliances",
+	"pests",
+	"tidy",
+	"mgmt_company",
+	"closets",
+	"heating",
+	"cooling",
+	"packages"
 ]
 
 categories = [
@@ -47,7 +69,18 @@ categories = [
 	"neighborhood",
 	"neighborhood",
 	"neighborhood",
-	"neighborhood"
+	"neighborhood",
+	"neighborhood",
+	"building and management",
+	"building and management",
+	"building and management",
+	"building and management",
+	"building and management",
+	"building and management",
+	"building and management",
+	"building and management",
+	"building and management",
+	"building and management",
 ]
 
 responses = [
@@ -59,7 +92,18 @@ responses = [
 	"yes",
 	"yes",
 	"good",
-	"good"
+	"good",
+	"yes",
+	"yes",
+	"yes",
+	"yes",
+	"yes",
+	"yes",
+	"good",
+	"good",
+	"yes",
+	"yes",
+	"yes",
 ]
 
 i = 0
@@ -68,8 +112,19 @@ methods.length.times do
 	Review_question.create(
 		:question => questions[i],
 		:method => methods[i],
-		:category => categories[i],
-		:response => responses[i])
+		:category => categories[i])
 	i += 1
+end
+
+reviews = Review.all
+questions = Review_question.all
+
+reviews.each do |review|
+	questions.each do |question|
+		Answer.create(
+			:review_id => review.id,
+			:review_question_id => question.id,
+			:response => ([true, false].sample))
+	end
 end
 

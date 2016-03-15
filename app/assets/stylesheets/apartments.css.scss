@@ -1,29 +1,64 @@
 #apt_index {
+	margin-top: 100px;
 	display: block;
 	clear: left;
 	margin-left: 10%;
 	width: 80%;
+
+	#listing_head {
+		display: block;
+		border: 1px solid black;
+
+		a {
+		}
+	}
 
 	.listing {
 		padding: 10px;
 		margin-bottom: 10px;
 		border: 1px solid black;
 
-		#map_canvas {
-			width: 300px;
-			height: 250px;
+		#address {
 			float: right;
+
+			#map_canvas {
+				width: 300px;
+				height: 250px;
+			}
+
+			#addr_text {
+				margin-top: 10px;
+			}
+
+			p {
+				font-weight: bold;
+				text-align: center;
+				margin: 5px;
+			}
+		}
+	}
+
+	.topic {
+		border: 1px solid black;
+		max-width: 60%;
+
+		h3, p {
+			margin-left: 10px;
 		}
 
-		.reviews {
-			margin: 10px;
-			padding: 10px;
-			border: 1px solid black;
+		.response {
+			font-weight: bold;
+		}
+	}		
 
-			.review {
-				border-bottom: 1px solid #999999;
-				padding: 0px 10px 0px 10px;
-			}
+	.reviews {
+		margin: 50px 10px 10px 10px;
+		padding: 10px;
+		border: 1px solid black;
+
+		.review {
+			border-bottom: 1px solid #999999;
+			padding: 0px 10px 0px 10px;
 		}
 	}
 
