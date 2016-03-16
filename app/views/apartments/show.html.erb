@@ -1,6 +1,3 @@
-<% map_key = ENV["LCLMAP"] %>
-<%= javascript_tag '', type:'text/javascript', src:'http://maps.google.com/maps/api/js?key=' << map_key %>
-
 <div id=apt_index>
 	<div id="listing_head">
 		<h1>Aparment Reviews for <%= @apartment.street_address %> <%= @apartment.street %></h1>
@@ -16,12 +13,12 @@
 		</div>
 			<% if @apartment.reviews.count > 0 %>
 				<div id="cum_ratings">
-						<h3>Aggregate Rating: <%= avg_rating @apartment.reviews.collect { |r| r.overal_rating } %> / 5.0</h3>
-						<% @topics.each do |topic| %>
+						<h3>Aggregate Rating: <%= @apartment.avg_rating %> / 5.0</h3>
+						<% topics.each do |topic| %>
 							<div class="topic">
 								<h3><%= topic.titleize %></h3>
 								<% @questions.where(category: topic).each do |question| %>
-									<p><%= question.question %> <span class="response"><%= cum_rating @answers, question.id %> said yes</span></p>
+									<p><%= question.question %> <span class="response"><%= number_to_percentage(@apartment.cum_rating(question.id), precision: 0) %> said yes</span></p>
 								<% end %>
 							</div>
 						<% end %>
@@ -35,13 +32,10 @@
 		</div>
 </div>
 
+<% map_key = ENV["LCLMAP"] %>
+<%= javascript_tag '', type:'text/javascript', src:'http://maps.google.com/maps/api/js?key=' << map_key %>
+
 <%= javascript_tag do %>
 	window.full_address = "<%= @apartment.full_address %>";
 	initialize(window.full_address);
 <% end %>
-
-
-
-
-
-
