@@ -8,9 +8,9 @@ class ApartmentsController < ApplicationController
 	# GET/apartments/1
 	def show
 		@apartment = Apartment.find(params[:id])
-		@questions = Review_question.all
+		@questions = ReviewQuestion.all
 
-		reviews = @apartment.reviews.collect
+		reviews = @apartment.reviews
 		@answers = reviews.each.collect { |review| review.answers }
 
 		@topics = ['bathroom', 'neighborhood', 'building and management']

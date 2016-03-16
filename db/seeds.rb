@@ -83,33 +83,10 @@ categories = [
 	"building and management",
 ]
 
-responses = [
-	"good",
-	"yes",
-	"yes",
-	"yes",
-	"yes",
-	"yes",
-	"yes",
-	"good",
-	"good",
-	"yes",
-	"yes",
-	"yes",
-	"yes",
-	"yes",
-	"yes",
-	"good",
-	"good",
-	"yes",
-	"yes",
-	"yes",
-]
-
 i = 0
 
 methods.length.times do
-	Review_question.create(
+	ReviewQuestion.create(
 		:question => questions[i],
 		:method => methods[i],
 		:category => categories[i])
@@ -117,7 +94,7 @@ methods.length.times do
 end
 
 reviews = Review.all
-questions = Review_question.all
+questions = ReviewQuestion.all
 
 reviews.each do |review|
 	questions.each do |question|
