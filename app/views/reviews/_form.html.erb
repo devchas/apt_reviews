@@ -1,6 +1,6 @@
 <%= form_for @review do |f| %>
-	<% if @review.errors.any? %>
-		<div id="error_explanation">
+  <% if @review.errors.any? %>
+    <div id="error_explanation">
       <p>Whoops! Looks like there are a few issues to sort out.</p>
 
       <ul>
@@ -9,20 +9,35 @@
       <% end %>
       </ul>
      </div>
-	<% end %>
+  <% end %>
 
 	<div class="field">
+    <%= f.label "Apt ID:" %>
+    <%= f.text_field :apartment_id %>
+  </div>
+  <div class="field">
+    <%= f.label "Address:" %>
+    <%= f.text_field :apartment, :placeholder => "Address" %>
+  </div>
+  <div class="field">
     <%= f.label "Title:" %>
     <%= f.text_field :title, :placeholder => "Review Title" %>
   </div>
   <div class="field">
     <%= f.label "Your Review:" %>
-    <%= f.text_field :description, :placeholder => "Insert Review" %>
+    <%= f.text_area :description, :placeholder => "Insert Review" %>
   </div>
   <div class="field">
     <%= f.label "Rating:" %>
     <%= f.text_field :overal_rating, :placeholder => "1 - 5" %>
   </div>
+  <% @questions.each do |question| %>
+    <div class="field">
+      <%= f.label question.question %>
+      <%= check_box :answer, :response %>
+    </div>
+  <% end %>
+
 
   <div class="actions">
     <%= f.submit "SUBMIT" %>

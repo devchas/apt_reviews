@@ -8,15 +8,29 @@ class ReviewsController < ApplicationController
 	# GET /reviews/new
 	def new
 		@review = Review.new
+		@questions = ReviewQuestion.all
 	end
 
 	# POST /reviews
 	def create
+		puts params
+		# review_stuff = {
+		# 	name: params[:name],
+		# 	address: params[:address]
+		# }
+
+		# answer_stuff = {
+		# 	answer: :this
+		# 	index: :that
+		# }
+
+		# @review = Review.new({name: params[:name]})
+
 		@review = Review.new(review_params)
 
-		respond_to do
+		respond_to do |format|
 			if @review.save
-				format.html { redirect_to root_url }
+				format.html { redirect_to apartment_url @review.apartment_id }
 			else
 				format.html { render :new }
 			end

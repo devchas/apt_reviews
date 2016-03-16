@@ -4,5 +4,7 @@
 	<p><%= review.description %></p>
 
 	<br>
-	<p>Posted by: <%= review.user.name %>
+	<% if review.user_id != nil %>
+		<p>Posted by: <%= review.user.name %>
+	<% end %>
 </div>

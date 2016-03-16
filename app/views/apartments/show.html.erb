@@ -13,7 +13,7 @@
 		</div>
 			<% if @apartment.reviews.count > 0 %>
 				<div id="cum_ratings">
-						<h3>Aggregate Rating: <%= @apartment.avg_rating %> / 5.0</h3>
+						<h3>Aggregate Rating: <%= number_with_precision @apartment.avg_rating, precision: 1 %> / 5.0</h3>
 						<% topics.each do |topic| %>
 							<div class="topic">
 								<h3><%= topic.titleize %></h3>
