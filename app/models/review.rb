@@ -6,8 +6,4 @@ class Review < ActiveRecord::Base
 
 	validates :overal_rating, presence: true
 
-	def create_answers
-		Question.all.each { |question| Answer.new_answer(id, question.id) }
-	end
-
 end

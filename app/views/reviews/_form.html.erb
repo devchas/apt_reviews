@@ -31,13 +31,16 @@
     <%= f.label "Rating:" %>
     <%= f.text_field :overal_rating, :placeholder => "1 - 5" %>
   </div>
+
   <% @questions.each do |question| %>
-    <div class="field">
+    <div class="question">
       <%= f.label question.question %>
-      <%= check_box :answer, :response %>
+      <%= radio_button 'response', question.id, true %>
+      <%= label 'response', :response, "Yes" %>
+      <%= radio_button 'response', question.id, false %>
+      <%= label 'response', :response, "No" %>
     </div>
   <% end %>
-
 
   <div class="actions">
     <%= f.submit "SUBMIT" %>

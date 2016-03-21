@@ -1,4 +1,5 @@
 class ReviewsController < ApplicationController
+	include ApplicationHelper
 
 	# GET /reviews/1
 	def show 
@@ -11,25 +12,18 @@ class ReviewsController < ApplicationController
 		@questions = ReviewQuestion.all
 	end
 
+
 	# POST /reviews
 	def create
-		puts params
-		# review_stuff = {
-		# 	name: params[:name],
-		# 	address: params[:address]
-		# }
-
-		# answer_stuff = {
-		# 	answer: :this
-		# 	index: :that
-		# }
-
-		# @review = Review.new({name: params[:name]})
-
 		@review = Review.new(review_params)
-
+		@questions = ReviewQuestion.all
+	
 		respond_to do |format|
 			if @review.save
+				@questions.each do |question|
+					response = params[:response][question.id.to_s.to_sym]
+					create_answer(question.id, @review.id, response)
+				end
 				format.html { redirect_to apartment_url @review.apartment_id }
 			else
 				format.html { render :new }
@@ -39,6 +33,14 @@ class ReviewsController < ApplicationController
 
 	def review_params
 		params.require(:review).permit(:title, :description, :overal_rating, :apartment_id)
+	end
+
+	def create_answer(q_id, r_id, my_response)
+		@answer = Answer.new(
+			review_question_id: q_id,
+			review_id: r_id,
+			response: my_response)
+		@answer.save
 	end
 
 end
