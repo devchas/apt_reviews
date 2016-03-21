@@ -6,6 +6,6 @@ module ApplicationHelper
 
 	def topics
 	  ['bathroom', 'neighborhood', 'building and management']
-	 end
+	end
 
 end
