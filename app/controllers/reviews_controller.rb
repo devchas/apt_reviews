@@ -1,5 +1,6 @@
 class ReviewsController < ApplicationController
 	include ApplicationHelper
+	before_action :authenticate_user!
 
 	# GET /reviews/1
 	def show 
@@ -32,7 +33,7 @@ class ReviewsController < ApplicationController
 	end
 
 	def review_params
-		params.require(:review).permit(:title, :description, :overal_rating, :apartment_id)
+		params.require(:review).permit(:title, :description, :overal_rating, :apartment_id, :user_id)
 	end
 
 	def create_answer(q_id, r_id, my_response)
