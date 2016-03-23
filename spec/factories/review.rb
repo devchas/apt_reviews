@@ -3,7 +3,7 @@
 			title { Faker::Lorem.sentence }
 			description { Faker::Lorem.paragraphs(3).join(' ') }
 			overal_rating { rand(5) }
-			apartment
 			user
+			apartment
 		end
 	end

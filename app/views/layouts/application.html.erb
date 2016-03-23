@@ -18,6 +18,7 @@
   </script>
 </head>
 <body>
+  
   <div id="header" class="container">
   <%= link_to root_url do %>
 		<%= image_tag("blueCrown.png", id: "logo") %>
@@ -26,18 +27,30 @@
 			<p>The Most Detailed Apartment Reviews from Actual Tenants</p>
 		</div>
   <% end %>
+  
   <div class="head_nav" id="browse">
     <%= link_to apartments_url do %>
         <h2>Browse</h2>
         <p>Apartment Reviews</p>
     <% end %>
   </div>
+  
   <div class="head_nav" id="review">
     <%= link_to new_review_url do %>  
       <h2>Review</h2>
       <p>Your Apartment</p>
     <% end %>
   </div>
+  
+  <div class="head_nav" id="user_nav">
+    <% if user_signed_in? %>
+      Signed in as<br><%= current_user.email %><br>Not you?
+      <%= link_to("Sign Out", destroy_user_session_path , :method => :delete) %>
+    <% else %>
+      <%= link_to("Sign Up", new_user_registration_path) %> or<br><%= link_to("Sign In", new_user_session_path) %>
+    <% end %>
+  </div>
+
 </div>
 
 <%= yield %>
