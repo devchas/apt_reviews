@@ -14,3 +14,47 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+var width;
+
+$(document).ready(function() {
+	$(window).load(function() {
+
+		width = $( window ).width();
+		
+		setBodyMargin();
+		setFormMargin();
+		
+	});
+});
+
+$( window ).resize(function() {
+		width = $( window ).width();
+		setBodyMargin();
+		setFormMargin();
+});
+
+function setBodyMargin() {
+		var head_ht = $( 'div#header.container' ).height();
+		$('.container-body').css('margin-top', head_ht);
+}
+
+function setFormMargin() {
+		console.log(width);
+
+		var frmWdth;
+		var frmMargin;
+		if (width > 550) {
+			frmWdth = width * .75;
+			frmMargin = .25 * width / 2;
+		} else {
+			frmWdth = width;
+			frmMargin = 0;
+		}
+
+		console.log(frmWdth);
+
+		$( '#form_div' ).css('width', frmWdth);
+		$( '#form_div' ).css('margin-left', frmMargin);
+
+}
