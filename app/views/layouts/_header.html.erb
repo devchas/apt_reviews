@@ -2,31 +2,29 @@
   <%= link_to root_url do %>
 		<%= image_tag("blueCrown.png", id: "logo") %>
 		<div id="tagline">	
-			<h1>Know Thy Apartment</h1>
-			<p>The Most Detailed Apartment Reviews from Actual Tenants</p>
+			<h1 id="brand">Know Thy Apartment</h1>
+			<p id="slogan">The Most Detailed Apartment Reviews from Actual Tenants</p>
 		</div>
   <% end %>
   
-  <div class="head_nav" id="browse">
-    <%= link_to apartments_url do %>
-        <h2>Browse</h2>
-        <p>Apartment Reviews</p>
-    <% end %>
-  </div>
+  <%= link_to apartments_url do %>
+    <div class="head_nav" id="browse">
+        <p>Browse Reviews</p>
+    </div>
+  <% end %>
   
-  <div class="head_nav" id="review">
-    <%= link_to new_review_url do %>  
-      <h2>Review</h2>
-      <p>Your Apartment</p>
-    <% end %>
-  </div>
+  <%= link_to new_review_url do %>  
+    <div class="head_nav" id="review">
+      <p>Submit Review</p>
+    </div>
+  <% end %>
   
-  <div class="head_nav" id="user_nav">
+  <div id="user_nav">
     <% if user_signed_in? %>
-      Signed in as<br><%= current_user.email %><br>Not you?
+      <%= current_user.email %><br>Not you?
       <%= link_to("Sign Out", destroy_user_session_path , :method => :delete) %>
     <% else %>
-      <%= link_to("Sign Up", new_user_registration_path) %> or<br><%= link_to("Sign In", new_user_session_path) %>
+      <%= link_to("Sign Up", new_user_registration_path) %> or <%= link_to("Sign In", new_user_session_path) %>
     <% end %>
   </div>
 
