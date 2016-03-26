@@ -1,0 +1,31 @@
+<div id="header" class="container">
+  <%= link_to root_url do %>
+		<%= image_tag("blueCrown.png", id: "logo") %>
+		<div id="tagline">	
+			<h1 id="brand">Know Thy Apartment</h1>
+			<p id="slogan">The Most Detailed Apartment Reviews from Actual Tenants</p>
+		</div>
+  <% end %>
+  
+  <%= link_to apartments_url do %>
+    <div class="head_nav" id="browse">
+        <p>Browse Reviews</p>
+    </div>
+  <% end %>
+  
+  <%= link_to new_review_url do %>  
+    <div class="head_nav" id="review">
+      <p>Submit Review</p>
+    </div>
+  <% end %>
+  
+  <div id="user_nav">
+    <% if user_signed_in? %>
+      <%= current_user.email %><br>Not you?
+      <%= link_to("Sign Out", destroy_user_session_path , :method => :delete) %>
+    <% else %>
+      <%= link_to("Sign Up", new_user_registration_path) %> or <%= link_to("Sign In", new_user_session_path) %>
+    <% end %>
+  </div>
+
+</div>
